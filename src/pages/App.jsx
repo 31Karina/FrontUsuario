@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../static/css/App.css';
 import axios from 'axios';
 import { HeaderApp } from '../components/HeaderApp';
+import TaskCalendar from '../components/TaskCalendar';
 
 export function App() {
     const [tableros, setTableros] = useState([]);
@@ -343,11 +344,12 @@ export function App() {
                             </section>
                         )}
                     </div>
+                    
                 </section>
 
                 <div className="complements">
                     <section className='section'>
-                        <h3>Diagrama</h3>
+                    <TaskCalendar /> 
                     </section>
 
                     <div className='bot-section'>
@@ -383,6 +385,7 @@ export function App() {
                             </div>
                         </section>
                     </div>
+                     
                 </div>
             </main>
 
