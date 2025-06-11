@@ -24,7 +24,7 @@ export function App() {
     const [tablas, setTablas] = useState(false);
     const [chatInput, setChatInput] = useState('');
     const [chatMessages, setChatMessages] = useState([]);
-
+    
     const currentUserId = localStorage.getItem("id_usuario");
 
     const btnPlus = () => setGroupForm(true);
@@ -208,69 +208,48 @@ export function App() {
         }
     };
 
-const enviarMensajeIA = async (e) => {
-    e.preventDefault();
+    const enviarMensajeIA = async (e) => {
+        e.preventDefault();
 
-    if (!chatInput.trim()) return;
+        if (!chatInput.trim()) return;
 
-    const nuevoMensaje = {
-        texto: chatInput,
-        remitente: 'usuario',
-        hora: new Date().toLocaleString()
-    };
-
-    // Agrega el mensaje del usuario al chat
-    setChatMessages(prev => [...prev, nuevoMensaje]);
-    setChatInput('');
-
-    try {
-        // Realiza la solicitud POST al backend
-        const response = await axios.post('http://localhost:8000/chatbot/', {
-            mensaje: chatInput
-        });
-
-        // Aquí tomamos solo el mensaje de OpenAI sin añadir un remitente 'bot'
-        const respuestaBot = {
-            texto: response.data.mensaje || "Error al procesar el mensaje.", // Asegúrate de que la respuesta sea válida
+        const nuevoMensaje = {
+            texto: chatInput,
+            remitente: 'usuario',
             hora: new Date().toLocaleString()
         };
 
-        // Agrega la respuesta del bot (OpenAI) al chat
-        setChatMessages(prev => [...prev, respuestaBot]);
+        setChatMessages(prev => [...prev, nuevoMensaje]);
+        setChatInput('');
 
-    } catch (error) {
-        // Si hay un error, mostramos un mensaje de error
-        const errorBot = {
-            texto: 'Hubo un error al procesar el mensaje.',
-            hora: new Date().toLocaleString()
-        };
-        setChatMessages(prev => [...prev, errorBot]);
-
-        console.error('Error al enviar el mensaje al backend:', error);  // Detalles del error
-        alert('Hubo un problema al procesar tu solicitud. Por favor, inténtalo más tarde.');  // Mensaje claro para el usuario
-    }
-};
-    const agregarTarea = async (mensaje) => {
         try {
-            const response = await axios.post('http://localhost:8000/tareas', {
-                titulo: "Tarea automática",
-                descripcion: mensaje,
-                fecha_final: "2025-12-31",  // Establecer una fecha predeterminada
-                prioridad: "media",
-                idGrupo: "ID del Grupo"  // Asegúrate de obtener el grupo o asignar uno
+            const response = await axios.post('http://localhost:8000/chatbot/', {
+                mensaje: chatInput
             });
-            console.log("Tarea creada", response.data);
-            // También puedes enviar una respuesta al chatbox diciendo que la tarea se ha creado correctamente
+
+            const respuestaBot = {
+                texto: response.data.mensaje || "Tarea creada correctamente.",
+                remitente: 'bot',
+                hora: new Date().toLocaleString()
+            };
+
+            fetchTableros();
+
+            setChatMessages(prev => [...prev, respuestaBot]);
+
         } catch (error) {
-            console.error("Error al crear tarea", error);
+            const errorBot = {
+                texto: 'Hubo un error al procesar el mensaje.',
+                remitente: 'bot',
+                hora: new Date().toLocaleString()
+            };
+            setChatMessages(prev => [...prev, errorBot]);
         }
     };
-
-    return (
+        return (
         <>
             <HeaderApp />
             <main className={(groupForm || tareaForm || updateForm || updateTask || deleteAlert || deleteTask) ? 'blur' : ''}>
-
                 <section className="work-board section">
                     <header className='section-header'>
                         <h3><i className="bi bi-view-stacked"></i>Tableros</h3>
@@ -309,7 +288,6 @@ const enviarMensajeIA = async (e) => {
                 </section>
 
                 <section className="work-list section">
-
                     <header className='section-header'>
                         <h3><i className="bi bi-check2-square"></i>Tareas</h3>
                         <button className='btn-add' onClick={btnAdd}>
@@ -318,7 +296,6 @@ const enviarMensajeIA = async (e) => {
                     </header>
 
                     <div className='container'>
-
                         <section className='list-board'>
                             {findByTablero ? (
                                 elementos ? (
@@ -335,14 +312,12 @@ const enviarMensajeIA = async (e) => {
                                                 </button>
                                             </li>
                                         ))}
-
                                     </ul>
                                 ) : (
                                     <h4 className='msg-placeholder'>
                                         Agrega nuevas tareas a tu tablero <i className="bi bi-arrow-up-right-circle"></i>
                                     </h4>
                                 )
-
                             ) : (
                                 <h3 className='msg-placeholder'>
                                     <i className="bi bi-arrow-left-circle"></i> Selecciona un tablero de tareas
@@ -351,7 +326,7 @@ const enviarMensajeIA = async (e) => {
                         </section>
 
                         {tareaSelected && (
-                            <section className='description-board '>
+                            <section className='description-board'>
                                 <div className='title'>
                                     <div className="title-contain">
                                         <i className="bi bi-body-text"></i>
@@ -369,9 +344,9 @@ const enviarMensajeIA = async (e) => {
                                 <p>{tareaSelected.descripcion}</p>
                             </section>
                         )}
-
                     </div>
                 </section>
+
                 <div className="complements">
                     <section className='section'>
                         <h3>Diagrama</h3>
@@ -396,36 +371,24 @@ const enviarMensajeIA = async (e) => {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="chatbox">
-                                    <div className="chat-messages">
-                                        {chatMessages.map((msg, index) => (
-                                            <div key={index} className={msg.remitente}>
-                                                <p>{msg.remitente === 'usuario' ? "Tú" : "IA"}: {msg.texto}</p>
-                                                <span>{msg.hora}</span>
-                                            </div>
-                                        ))}
-                                    </div>
+                                <div className='send-text'>
                                     <form onSubmit={enviarMensajeIA}>
                                         <input
                                             type="text"
                                             value={chatInput}
                                             onChange={(e) => setChatInput(e.target.value)}
                                             placeholder="Escribe tu mensaje..."
-                                            name="chatInput"  // Agregar un name o id único
                                         />
                                         <button type="submit">Enviar</button>
                                     </form>
                                 </div>
                             </div>
                         </section>
-
                     </div>
-
                 </div>
             </main>
-            
-            {/* -- Elementos emergentes -- */}
 
+            {/* -- Elementos emergentes -- */}
             {groupForm && (
                 <form className='form-board' onSubmit={btnCreate}>
                     <header>
@@ -448,7 +411,7 @@ const enviarMensajeIA = async (e) => {
                             <i className="bi bi-x-lg"></i>
                         </button>
                     </header>
-                    <input type="text" name='nombre' defaultValue={updateTablero.nombre}/>
+                    <input type="text" name='nombre' defaultValue={updateTablero.nombre} />
                     <textarea name="descripcion" id="descripcion" rows={8} defaultValue={updateTablero.descripcion}></textarea>
                     <button className='btn-submit' type='submit'>Guardar</button>
                 </form>
@@ -458,7 +421,7 @@ const enviarMensajeIA = async (e) => {
                 <div className="alert">
                     <i className="bi bi-exclamation-triangle-fill"></i>
                     <button className='closed' onClick={btnCancel}>
-                            <i className="bi bi-x-lg"></i>
+                        <i className="bi bi-x-lg"></i>
                     </button>
                     <p>¿Seguro que deseas eliminar el tablero <span>{deleteTablero.nombre}</span>?</p>
                     <button className='btn-delete' onClick={btnDelete}>Eliminar</button>
@@ -478,7 +441,7 @@ const enviarMensajeIA = async (e) => {
                     <div className='data'>
                         <div className='info'>
                             <p>Fecha final</p>
-                            <input type="date" name="fecha_final" required/>
+                            <input type="date" name="fecha_final" required />
                         </div>
                         <div className='info'>
                             <p>Prioridad</p>
@@ -527,14 +490,13 @@ const enviarMensajeIA = async (e) => {
                 <div className="alert">
                     <i className="bi bi-exclamation-triangle-fill"></i>
                     <button className='closed' onClick={btnCancel}>
-                            <i className="bi bi-x-lg"></i>
+                        <i className="bi bi-x-lg"></i>
                     </button>
                     <p>¿Seguro que deseas eliminar la tarea <span>{deleteTarea.titulo}</span>?</p>
                     <button className='btn-delete' onClick={btnRemove}>Eliminar</button>
                 </div>
             )}
-
         </>
-        
     );
+
 }

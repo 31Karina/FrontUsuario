@@ -1591,23 +1591,20 @@ main .complements .bot-section .notifications .body-chat .send-text {
     padding: 1px 12px;
 }
 .send-text form {
-  display: flex;
-  gap: 8px;
-  padding: 10px;
+    display: flex;
+    gap: 8px;
+    padding: 1px;
 }
-
 .send-text input {
-    flex: 1; /* Asegura que el input ocupe todo el espacio disponible */
-    padding: 16px 20px; /* Aumenta el tamaño de padding */
-    font-size: 18px; /* Aumenta el tamaño del texto */
-    border-radius: 20px; /* Bordes más redondeados */
-    border: 2px solid #c2c2c2; /* Añade borde sutil */
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de transparencia */
-    color: black; /* Color del texto */
-    margin-right: 10px; /* Espacio entre el input y el botón */
-    min-width: 300px; /* Asegura que el campo sea lo suficientemente grande */
-    height: 45px; /* Aumenta la altura del campo */
-    transition: border 0.3s ease; /* Efecto de transición en el borde */
+    flex: 1; 
+    padding: 16px 20px;
+    font-size: 13px;
+    border-radius: 20px;
+    border: 2px solid #c2c2c2;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    margin-right: 10px;
+    height: 40px;
 }
 
 .send-text input:focus {
@@ -1615,26 +1612,14 @@ main .complements .bot-section .notifications .body-chat .send-text {
     outline: none; /* Elimina el borde predeterminado */
 }
 
-/* Mejoramos el botón */
 .send-text button {
-    background-color: #0d6efd; /* Color de fondo */
-    color: white; /* Color de texto */
+    background-color: #0d6efd;
+    color: white;
     border: none;
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 16px 24px; /* Aumenta el tamaño del botón */
-    font-size: 18px; /* Aumenta el tamaño de la fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de transición */
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-.send-text button:hover {
-    background-color: #0056b3; /* Cambia el color al hacer hover */
-    transform: translateY(-2px); /* Efecto de movimiento hacia arriba */
-}
-
-.send-text button:active {
-    transform: translateY(2px); /* Efecto al presionar */
+    border-radius: 20px;
+    padding: 16px 24px;
+    font-size: 13px;
+    cursor: pointer;
 }
 
 /* Ajuste adicional para los mensajes */
