@@ -220,7 +220,7 @@ export function App() {
         };
 
         setChatMessages(prev => [...prev, nuevoMensaje]);
-        setChatInput('');
+        setChatInput('');  // Limpiar campo de entrada
 
         try {
             const response = await axios.post('http://localhost:8000/chatbot/', {
@@ -232,8 +232,6 @@ export function App() {
                 remitente: 'bot',
                 hora: new Date().toLocaleString()
             };
-
-            fetchTableros();
 
             setChatMessages(prev => [...prev, respuestaBot]);
 
