@@ -1,0 +1,1649 @@
+main {
+    max-width: 100%;
+    height: 88vh;
+    margin: 0px auto;
+    display: grid;
+    z-index: 5;
+    grid-template-columns: 1.2fr 1.7fr 3fr;
+    padding: 10px 0px;
+    gap: 10px;
+    margin: 0px;
+    border-radius: 0px 0px 5px 5px;
+    box-sizing: border-box;
+    transition: filter 0.3s ease;
+    font-family: 'Dosis', sans-serif;
+}
+
+.blur {
+    filter: blur(3px);
+}
+
+main .section {
+    width: 100%;
+    max-height: 100%;
+    background-color: rgba(1, 59, 88, 0.4);
+}
+
+main .work-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    gap: 10px;
+    border-radius: 0px 0px 0px 5px;
+}
+
+main .work-board::-webkit-scrollbar {
+    display: none;
+}
+
+main section h3 {
+    color: #ffffff;
+    margin: 0px;
+}
+
+main .work-board .btn-table {
+    width: 90%;
+    background-color: rgba(2, 83, 170);
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+main .work-board .btn-table button {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Dosis';
+    cursor: pointer;
+}
+
+main .work-board .btn-table .task {
+    text-wrap: wrap;
+    width: 100%;
+    font-size: 15px;
+}
+
+main .work-board .btn-table .menu {
+    border-radius: 50%;
+    padding: 3px 5px;
+    font-size: 18px;
+    position: absolute;
+    right: 0px;
+}
+
+main .work-board .btn-table .menu-container {
+    position: absolute;
+    background-color: rgba(2, 83, 170, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px 10px;
+    gap: 10px;
+    top: 35px;
+    right: 0px;
+    z-index: 5;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 5px 5px;
+}
+
+main .work-board .btn-table .menu-container .menu-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    text-transform: none;
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+}
+
+main .work-board .btn-table .menu-container .menu-btn:hover {
+    text-shadow: 5px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+main .work-board .btn-table .menu:hover {
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+main .work-board .section-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+main .work-board .section-header h3 {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+main .work-board .section-header h3 i {
+    font-size: 15px;
+}
+
+main .work-board .section-header .btn-add {
+    margin-right: 15px;
+    font-size: 25px;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+main .work-board .section-header .btn-add:hover {
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.form-board {
+    width: 50vh;
+    background-color: rgba(1, 59, 88, 0.8);
+    border-radius: 5px 10% 5px 10%;
+    gap: 10px;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transition: all 0.4s ease;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-125%, -91%);
+    padding: 10px 20px 20px 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-family: 'Dosis';
+}
+
+.form-board header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form-board header h4 {
+    color: #fff;
+    margin: 0;
+}
+
+.form-board header button {
+    border-radius: 50%;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border: none;
+}
+
+.form-board header button i:hover {
+    color: rgba(255, 255, 255);
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.form-board header button i {
+    margin: 0;
+}
+
+.form-board input {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: #fff;
+    width: 100%;
+    font-family: 'Dosis';
+}
+
+.form-board textarea {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    font-family: 'Dosis';
+}
+
+.form-board button.btn-submit {
+    width: 30%;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    cursor: pointer;
+    border: solid 2px rgba(255, 255, 255, 0.1);
+    font-family: 'Dosis';
+}
+
+.form-board button.btn-submit:hover {
+    color: rgba(1, 59, 88, 1);
+    border: solid 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-weight: 600;
+}
+
+.alert {
+    background-color: rgba(136, 35, 12, 0.8);
+    border-radius: 10px;
+    padding: 35px 25px 40px 25px;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.alert .bi.bi-exclamation-triangle-fill {
+    position: fixed;
+    top: 5px;
+    right: 50%;
+    transform: translateX(50%);
+    color: #fff;
+    font-size: 30px;
+}
+
+.alert .closed {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 5px;
+}
+
+.alert .closed:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255);
+}
+
+.alert p {
+    color: #fff;
+    font-size: 15px;
+}
+
+.alert p span {
+    font-weight: 600;
+}
+
+.alert .btn-delete {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    background: transparent;
+    border-radius: 5px;
+    border: solid 2px rgba(255, 255, 255, 0.2);
+    padding: 3px 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Dosis';
+}
+
+.alert .btn-delete:hover {
+    background-color: #fff;
+    color: rgba(136, 35, 12);
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+main .work-list {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    gap: 10px;
+}
+
+main .work-list .section-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+main .work-list .section-header h3 {
+    display: flex;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+main .work-list .section-header h3 i {
+    font-size: 18px
+}
+
+main .work-list .section-header .btn-add {
+    margin-right: 15px;
+    padding: 0;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+main .work-list .section-header .btn-add:hover {
+    text-shadow: 0px 0px 5px #fff;
+}
+
+main .work-list .container {
+    width: 100%;
+    flex: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    overflow: hidden;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+main .work-list .container section {
+    width: 95%;
+    flex: 2;
+    overflow: auto;
+    background-color: rgb(7, 35, 66);
+    border: solid 2.5px #2e4862;
+}
+
+main .work-list .container .list-board ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+main .work-list .container .list-board ul li {
+    position: relative;
+    display: flex;
+    padding: 6px 10px;
+    gap: 5px;
+    color: #fff;
+    align-items: center;
+}
+
+main .work-list .container .list-board ul li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+main .work-list .container .list-board ul li input {
+    margin: 0px;
+    cursor: pointer;
+}
+
+main .work-list .container .list-board ul li p {
+    margin: 0px;
+    font-size: 15px;
+}
+
+main .work-list .container .list-board ul li p.checked {
+    text-decoration: line-through;
+    color: gray;
+}
+
+main .work-list .container .list-board ul li button {
+    background: transparent;
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    padding: 2px 10px;
+    cursor: pointer;
+    border-top: solid 2px rgba(0, 0, 0, 0.3);
+    border-right: solid 2px rgba(0, 0, 0, 0.8);
+    border-left: solid 2px rgba(0, 0, 0, 0.3);
+    border-bottom: solid 2px rgba(0, 0, 0, 0.8);
+}
+
+main .work-list .container .list-board ul li button:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+main .work-list .container .list-board ul li button.view {
+    right: 50px;
+}
+
+main .work-list .container .list-board ul li button.view.active {
+    background-color: rgb(2, 123, 77);
+    border-left: solid 2px rgba(255, 255, 255, 0.6);
+    border-top: solid 2px rgba(255, 255, 255, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+main .work-list .container .list-board ul li button.trash {
+    right: 5px;
+}
+
+main .work-list .container .list-board ul li button.trash:focus {
+    background-color: rgb(160, 3, 0);
+    border-left: solid 2px rgba(255, 255, 255, 0.6);
+    border-top: solid 2px rgba(255, 255, 255, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+main .work-list .container .description-board .title {
+    width: 100%;
+    display: flex;
+    color: #fff;
+    align-items: start;
+}
+
+main .work-list .container .description-board .title .title-contain {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px 10px 10px;
+    gap: 10px;
+    align-items: start;
+}
+
+main .work-list .container .description-board .title .title-contain .edit {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+}
+
+main .work-list .container .description-board .title .title-contain .edit:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 5px #fff;
+}
+
+main .work-list .container .description-board .title .title-contain .edit:focus {
+    border-left: solid 2px rgba(255, 255, 255, 0.6);
+    border-top: solid 2px rgba(255, 255, 255, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+main .work-list .container .description-board .title h4 {
+    margin: 0px;
+}
+
+main .work-list .container .description-board .title .details {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    margin: 10px 10px 10px 0px;
+}
+
+main .work-list .container .description-board .title .details span {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: 0px 10px;
+}
+
+main .work-list .container .description-board .title .details p {
+    margin: 0px;
+    font-size: 13px;
+}
+
+main .work-list .container .description-board p {
+    margin: 0px 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.form-task {
+    width: 50vh;
+    background-color: rgba(1, 59, 88, 0.8);
+    border-radius: 5px 10% 5px 10%;
+    gap: 10px;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transition: all 0.4s ease;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-75%);
+    padding: 10px 20px 20px 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-family: 'Dosis';
+}
+
+.form-task header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form-task header h4 {
+    color: #fff;
+    margin: 0;
+}
+
+.form-task header button {
+    border-radius: 50%;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border: none;
+}
+
+.form-task header button i:hover {
+    color: rgba(255, 255, 255);
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.form-task header button i {
+    margin: 0;
+}
+
+.form-task input {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: #fff;
+    width: 100%;
+    font-family: 'Dosis';
+}
+
+.form-task textarea {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    font-family: 'Dosis';
+}
+
+.form-task .data {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.form-task .data .info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.form-task .data p {
+    color: rgb(173, 173, 173);
+    margin: 0;
+    font-size: 14px;
+}
+
+.form-task .data input {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    font-family: 'Dosis';
+}
+
+.form-task .data select {
+    width: 60%;
+    height: 27px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-task .data select option {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: 'Dosis';
+}
+
+.form-task button.btn-submit {
+    width: 30%;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    cursor: pointer;
+    border: solid 2px rgba(255, 255, 255, 0.1);
+    font-family: 'Dosis';
+}
+
+.form-task button.btn-submit:hover {
+    color: rgba(1, 59, 88, 1);
+    border: solid 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-weight: 600;
+}
+
+main .complements {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+main .complements .section {
+    text-align: center;
+}
+
+main .complements .bot-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    align-items: center;
+}
+
+main .complements .bot-section .bot {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    filter: drop-shadow(0px -5px 15px rgba(255, 255, 255, 0.5));
+    /*border: solid 1px rgba(0, 0, 0, 0.3);*/
+    box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+main .complements .bot-section .notifications {
+    border-radius: 0px 0px 5px 0px;
+    width: 100%;
+    height: 100%;
+}
+
+main .complements .bot-section .notifications.section header{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 20px;
+}
+
+main .complements .bot-section .notifications header h3 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+main .complements .bot-section .notifications header h3 i {
+    margin: 0;
+}
+
+main .complements .bot-section .notifications header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+main .complements .bot-section .notifications header button:hover {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255);
+}
+
+main .complements .bot-section .notifications .body-chat {
+    height: 90%;
+    display: grid;
+    grid-template-rows: 8fr 2fr;
+}
+
+main .complements .bot-section .notifications .body-chat .text-chat {
+    margin: 5px 10px;
+    flex: 2;
+    overflow: auto;
+    background-color: rgb(7, 35, 66);
+    border: solid 2.5px #2e4862;
+}
+
+main .complements .bot-section .notifications .body-chat .text-chat .message {
+    width: auto;
+    height: auto;
+    background-color: rgb(21, 90, 168);
+    margin: 5px 50px 5px 10px;
+    border-radius: 10px 10px 10px 0;
+    text-align: start;
+    padding: 5px;
+}
+
+main .complements .bot-section .notifications .body-chat .text-chat .message p.text {
+    margin: 0;
+    color: rgb(243, 213, 20);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    padding-left: 5px;
+}
+
+main .complements .bot-section .notifications .body-chat .text-chat .message p span {
+    color: rgb(173, 173, 173);
+    font-weight: 100;
+    font-size: 12px;
+    text-align: end;
+}
+
+main .complements .bot-section .notifications .body-chat .send-text {
+    margin: 5px 10px;
+    background-color: rgb(7, 35, 66);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(1, 97, 145, 0.5); 
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgb(1, 97, 145);
+}
+
+.hidden {
+    display: none;
+}
+
+.msg-placeholder {
+    color: rgb(190, 190, 190);
+    text-align: center;
+}
+
+.msg-placeholder-dark {
+    color: rgb(90, 90, 90);
+    text-align: center;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255);
+}
+
+.prioridad-baja {
+    background-color: rgb(43, 139, 16);
+    color: #fff;
+    padding: 1px 12px;
+}
+
+.prioridad-media {
+    background-color: rgb(209, 182, 4);
+    color: #fff;
+    padding: 1px 8px;
+}
+
+.prioridad-alta {
+    background-color: rgb(251, 21, 21);
+    color: #fff;
+    padding: 1px 12px;
+}
+main {
+    max-width: 100%;
+    height: 88vh;
+    margin: 0px auto;
+    display: grid;
+    z-index: 5;
+    grid-template-columns: 1.2fr 1.7fr 3fr;
+    padding: 10px 0px;
+    gap: 10px;
+    margin: 0px;
+    border-radius: 0px 0px 5px 5px;
+    box-sizing: border-box;
+    transition: filter 0.3s ease;
+    font-family: 'Dosis', sans-serif;
+}
+
+.blur {
+    filter: blur(3px);
+}
+
+main .section {
+    width: 100%;
+    max-height: 100%;
+    background-color: rgba(1, 59, 88, 0.4);
+}
+
+main .work-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    gap: 10px;
+    border-radius: 0px 0px 0px 5px;
+}
+
+main .work-board::-webkit-scrollbar {
+    display: none;
+}
+
+main section h3 {
+    color: #ffffff;
+    margin: 0px;
+}
+
+main .work-board .btn-table {
+    width: 90%;
+    background-color: rgba(2, 83, 170);
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+main .work-board .btn-table button {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Dosis';
+    cursor: pointer;
+}
+
+main .work-board .btn-table .task {
+    text-wrap: wrap;
+    width: 100%;
+    font-size: 15px;
+}
+
+main .work-board .btn-table .menu {
+    border-radius: 50%;
+    padding: 3px 5px;
+    font-size: 18px;
+    position: absolute;
+    right: 0px;
+}
+
+main .work-board .btn-table .menu-container {
+    position: absolute;
+    background-color: rgba(2, 83, 170, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px 10px;
+    gap: 10px;
+    top: 35px;
+    right: 0px;
+    z-index: 5;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 5px 5px;
+}
+
+main .work-board .btn-table .menu-container .menu-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    text-transform: none;
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+}
+
+main .work-board .btn-table .menu-container .menu-btn:hover {
+    text-shadow: 5px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+main .work-board .btn-table .menu:hover {
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+main .work-board .section-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+main .work-board .section-header h3 {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+main .work-board .section-header h3 i {
+    font-size: 15px;
+}
+
+main .work-board .section-header .btn-add {
+    margin-right: 15px;
+    font-size: 25px;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+main .work-board .section-header .btn-add:hover {
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.form-board {
+    width: 50vh;
+    background-color: rgba(1, 59, 88, 0.8);
+    border-radius: 5px 10% 5px 10%;
+    gap: 10px;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transition: all 0.4s ease;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-125%, -91%);
+    padding: 10px 20px 20px 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-family: 'Dosis';
+}
+
+.form-board header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form-board header h4 {
+    color: #fff;
+    margin: 0;
+}
+
+.form-board header button {
+    border-radius: 50%;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border: none;
+}
+
+.form-board header button i:hover {
+    color: rgba(255, 255, 255);
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.form-board header button i {
+    margin: 0;
+}
+
+.form-board input {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: #fff;
+    width: 100%;
+    font-family: 'Dosis';
+}
+
+.form-board textarea {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    font-family: 'Dosis';
+}
+
+.form-board button.btn-submit {
+    width: 30%;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    cursor: pointer;
+    border: solid 2px rgba(255, 255, 255, 0.1);
+    font-family: 'Dosis';
+}
+
+.form-board button.btn-submit:hover {
+    color: rgba(1, 59, 88, 1);
+    border: solid 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-weight: 600;
+}
+
+.alert {
+    background-color: rgba(136, 35, 12, 0.8);
+    border-radius: 10px;
+    padding: 35px 25px 40px 25px;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.alert .bi.bi-exclamation-triangle-fill {
+    position: fixed;
+    top: 5px;
+    right: 50%;
+    transform: translateX(50%);
+    color: #fff;
+    font-size: 30px;
+}
+
+.alert .closed {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 5px;
+}
+
+.alert .closed:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255);
+}
+
+.alert p {
+    color: #fff;
+    font-size: 15px;
+}
+
+.alert p span {
+    font-weight: 600;
+}
+
+.alert .btn-delete {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    background: transparent;
+    border-radius: 5px;
+    border: solid 2px rgba(255, 255, 255, 0.2);
+    padding: 3px 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Dosis';
+}
+
+.alert .btn-delete:hover {
+    background-color: #fff;
+    color: rgba(136, 35, 12);
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+main .work-list {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    gap: 10px;
+}
+
+main .work-list .section-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+main .work-list .section-header h3 {
+    display: flex;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+main .work-list .section-header h3 i {
+    font-size: 18px
+}
+
+main .work-list .section-header .btn-add {
+    margin-right: 15px;
+    padding: 0;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+main .work-list .section-header .btn-add:hover {
+    text-shadow: 0px 0px 5px #fff;
+}
+
+main .work-list .container {
+    width: 100%;
+    flex: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    overflow: hidden;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+main .work-list .container section {
+    width: 95%;
+    flex: 2;
+    overflow: auto;
+    background-color: rgb(7, 35, 66);
+    border: solid 2.5px #2e4862;
+}
+
+main .work-list .container .list-board ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+main .work-list .container .list-board ul li {
+    position: relative;
+    display: flex;
+    padding: 6px 10px;
+    gap: 5px;
+    color: #fff;
+    align-items: center;
+}
+
+main .work-list .container .list-board ul li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+main .work-list .container .list-board ul li input {
+    margin: 0px;
+    cursor: pointer;
+}
+
+main .work-list .container .list-board ul li p {
+    margin: 0px;
+    font-size: 15px;
+}
+
+main .work-list .container .list-board ul li p.checked {
+    text-decoration: line-through;
+    color: gray;
+}
+
+main .work-list .container .list-board ul li button {
+    background: transparent;
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    padding: 2px 10px;
+    cursor: pointer;
+    border-top: solid 2px rgba(0, 0, 0, 0.3);
+    border-right: solid 2px rgba(0, 0, 0, 0.8);
+    border-left: solid 2px rgba(0, 0, 0, 0.3);
+    border-bottom: solid 2px rgba(0, 0, 0, 0.8);
+}
+
+main .work-list .container .list-board ul li button:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+main .work-list .container .list-board ul li button.view {
+    right: 50px;
+}
+
+main .work-list .container .list-board ul li button.view.active {
+    background-color: rgb(2, 123, 77);
+    border-left: solid 2px rgba(255, 255, 255, 0.6);
+    border-top: solid 2px rgba(255, 255, 255, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+main .work-list .container .list-board ul li button.trash {
+    right: 5px;
+}
+
+main .work-list .container .list-board ul li button.trash:focus {
+    background-color: rgb(160, 3, 0);
+    border-left: solid 2px rgba(255, 255, 255, 0.6);
+    border-top: solid 2px rgba(255, 255, 255, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+main .work-list .container .description-board .title {
+    width: 100%;
+    display: flex;
+    color: #fff;
+    align-items: start;
+}
+
+main .work-list .container .description-board .title .title-contain {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px 10px 10px;
+    gap: 10px;
+    align-items: start;
+}
+
+main .work-list .container .description-board .title .title-contain .edit {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+}
+
+main .work-list .container .description-board .title .title-contain .edit:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 0px 5px #fff;
+}
+
+main .work-list .container .description-board .title .title-contain .edit:focus {
+    border-left: solid 2px rgba(255, 255, 255, 0.6);
+    border-top: solid 2px rgba(255, 255, 255, 0.6);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+main .work-list .container .description-board .title h4 {
+    margin: 0px;
+}
+
+main .work-list .container .description-board .title .details {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    margin: 10px 10px 10px 0px;
+}
+
+main .work-list .container .description-board .title .details span {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin: 0px 10px;
+}
+
+main .work-list .container .description-board .title .details p {
+    margin: 0px;
+    font-size: 13px;
+}
+
+main .work-list .container .description-board p {
+    margin: 0px 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.form-task {
+    width: 50vh;
+    background-color: rgba(1, 59, 88, 0.8);
+    border-radius: 5px 10% 5px 10%;
+    gap: 10px;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transition: all 0.4s ease;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-75%);
+    padding: 10px 20px 20px 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-family: 'Dosis';
+}
+
+.form-task header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form-task header h4 {
+    color: #fff;
+    margin: 0;
+}
+
+.form-task header button {
+    border-radius: 50%;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border: none;
+}
+
+.form-task header button i:hover {
+    color: rgba(255, 255, 255);
+    text-shadow: 0px 0px 5px #fff;
+}
+
+.form-task header button i {
+    margin: 0;
+}
+
+.form-task input {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: #fff;
+    width: 100%;
+    font-family: 'Dosis';
+}
+
+.form-task textarea {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    font-family: 'Dosis';
+}
+
+.form-task .data {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.form-task .data .info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.form-task .data p {
+    color: rgb(173, 173, 173);
+    margin: 0;
+    font-size: 14px;
+}
+
+.form-task .data input {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    font-family: 'Dosis';
+}
+
+.form-task .data select {
+    width: 60%;
+    height: 27px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-task .data select option {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: 'Dosis';
+}
+
+.form-task button.btn-submit {
+    width: 30%;
+    background-color: transparent;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    cursor: pointer;
+    border: solid 2px rgba(255, 255, 255, 0.1);
+    font-family: 'Dosis';
+}
+
+.form-task button.btn-submit:hover {
+    color: rgba(1, 59, 88, 1);
+    border: solid 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-weight: 600;
+}
+
+main .complements {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+main .complements .section {
+    text-align: center;
+}
+
+main .complements .bot-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    align-items: center;
+}
+
+main .complements .bot-section .bot {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    filter: drop-shadow(0px -5px 15px rgba(255, 255, 255, 0.5));
+    /*border: solid 1px rgba(0, 0, 0, 0.3);*/
+    box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+main .complements .bot-section .notifications {
+    border-radius: 0px 0px 5px 0px;
+    width: 100%;
+    height: 100%;
+}
+
+main .complements .bot-section .notifications.section header{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 20px;
+}
+
+main .complements .bot-section .notifications header h3 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+main .complements .bot-section .notifications header h3 i {
+    margin: 0;
+}
+
+main .complements .bot-section .notifications header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+main .complements .bot-section .notifications header button:hover {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255);
+}
+
+main .complements .bot-section .notifications .body-chat {
+    height: 90%;
+    display: grid;
+    grid-template-rows: 8fr 2fr;
+}
+
+main .complements .bot-section .notifications .body-chat .text-chat {
+    margin: 5px 10px;
+    flex: 2;
+    overflow: auto;
+    background-color: rgb(7, 35, 66);
+    border: solid 2.5px #2e4862;
+}
+
+main .complements .bot-section .notifications .body-chat .text-chat .message {
+    width: auto;
+    height: auto;
+    background-color: rgb(21, 90, 168);
+    margin: 5px 50px 5px 10px;
+    border-radius: 10px 10px 10px 0;
+    text-align: start;
+    padding: 5px;
+}
+
+main .complements .bot-section .notifications .body-chat .text-chat .message p.text {
+    margin: 0;
+    color: rgb(243, 213, 20);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    padding-left: 5px;
+}
+
+main .complements .bot-section .notifications .body-chat .text-chat .message p span {
+    color: rgb(173, 173, 173);
+    font-weight: 100;
+    font-size: 12px;
+    text-align: end;
+}
+
+main .complements .bot-section .notifications .body-chat .send-text {
+    margin: 5px 10px;
+    background-color: rgb(7, 35, 66);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(1, 97, 145, 0.5); 
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgb(1, 97, 145);
+}
+
+.hidden {
+    display: none;
+}
+
+.msg-placeholder {
+    color: rgb(190, 190, 190);
+    text-align: center;
+}
+
+.msg-placeholder-dark {
+    color: rgb(90, 90, 90);
+    text-align: center;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255);
+}
+
+.prioridad-baja {
+    background-color: rgb(43, 139, 16);
+    color: #fff;
+    padding: 1px 12px;
+}
+
+.prioridad-media {
+    background-color: rgb(209, 182, 4);
+    color: #fff;
+    padding: 1px 8px;
+}
+
+.prioridad-alta {
+    background-color: rgb(251, 21, 21);
+    color: #fff;
+    padding: 1px 12px;
+}
+.send-text form {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+}
+
+.send-text input {
+    flex: 1; /* Asegura que el input ocupe todo el espacio disponible */
+    padding: 16px 20px; /* Aumenta el tamaño de padding */
+    font-size: 18px; /* Aumenta el tamaño del texto */
+    border-radius: 20px; /* Bordes más redondeados */
+    border: 2px solid #c2c2c2; /* Añade borde sutil */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de transparencia */
+    color: black; /* Color del texto */
+    margin-right: 10px; /* Espacio entre el input y el botón */
+    min-width: 300px; /* Asegura que el campo sea lo suficientemente grande */
+    height: 45px; /* Aumenta la altura del campo */
+    transition: border 0.3s ease; /* Efecto de transición en el borde */
+}
+
+.send-text input:focus {
+    border-color: #0d6efd; /* Cambia el color del borde al hacer foco */
+    outline: none; /* Elimina el borde predeterminado */
+}
+
+/* Mejoramos el botón */
+.send-text button {
+    background-color: #0d6efd; /* Color de fondo */
+    color: white; /* Color de texto */
+    border: none;
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 16px 24px; /* Aumenta el tamaño del botón */
+    font-size: 18px; /* Aumenta el tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de transición */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.send-text button:hover {
+    background-color: #0056b3; /* Cambia el color al hacer hover */
+    transform: translateY(-2px); /* Efecto de movimiento hacia arriba */
+}
+
+.send-text button:active {
+    transform: translateY(2px); /* Efecto al presionar */
+}
+
+/* Ajuste adicional para los mensajes */
+.text-chat {
+    margin: 5px 10px;
+    flex: 2;
+    overflow-y: auto;
+    background-color: rgb(7, 35, 66);
+    border: solid 2.5px #2e4862;
+    height: 100%;
+    max-height: 240px;
+}
